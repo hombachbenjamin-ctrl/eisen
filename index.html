@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Eisen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Trainingsplan, Sätze und Fortschritt, offline auf dem Handy.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#181d25">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Eisen">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="preload" href="fonts/big-shoulders-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/archivo-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <style>html { background: #181d25; }</style>
+  <!-- SPLASH -->
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/start-750x1334.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1242x2208.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1125x2436.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="splash/start-828x1792.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1242x2688.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 360px) and (device-height: 780px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1080x2340.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1170x2532.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1284x2778.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1179x2556.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1290x2796.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1206x2622.png">
+  <link rel="apple-touch-startup-image" media="(device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="splash/start-1320x2868.png">
+  <script type="module" src="js/app.js" onerror="document.getElementById('load-error').hidden = false"></script>
+</head>
+<body>
+  <div id="load-error" class="empty" hidden>
+    <p>Die App konnte nicht geladen werden. Prüfe deine Internetverbindung und versuche es noch einmal.</p>
+    <button class="btn btn-solid" onclick="location.reload()">Neu laden</button>
+  </div>
+  <div id="app">
+    <main id="screen"></main>
+    <div id="dock" hidden></div>
+    <nav id="tabs" aria-label="Hauptmenü" hidden>
+      <a href="#/" data-tab="training">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+        <span>Training</span>
+      </a>
+      <a href="#/verlauf" data-tab="verlauf">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 18l6-7 4.5 4L21 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Verlauf</span>
+      </a>
+      <a href="#/mehr" data-tab="mehr">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M4 8h9M19 8h1M4 16h1M11 16h9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="8" r="2.6" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="8" cy="16" r="2.6" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
+        <span>Einstellungen</span>
+      </a>
+    </nav>
+  </div>
+  <div id="pad-scrim" hidden></div>
+  <div id="pad" hidden role="dialog" aria-label="Werte eingeben"></div>
+  <div id="toast" hidden role="status"></div>
+  <dialog id="dialog"></dialog>
+</body>
+</html>
